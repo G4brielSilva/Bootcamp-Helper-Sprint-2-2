@@ -9,30 +9,30 @@ class Person {
     constructor(list) {
         this.data = list;
     }
-    getBioById(id) {
+    getBioById(rId) {
         for (const value of this.data) {
-            if (value.id === id)
+            if (value.id === rId)
                 return value.bio;
         }
         return "Id Inválido";
     }
-    getNameById(id) {
+    getNameById(rId) {
         for (const value of this.data) {
-            if (value.id === id)
+            if (value.id === rId)
                 return value.name;
         }
         return "Id Inválido";
     }
-    deleteElementById(id) {
+    deleteElementById(rId) {
         this.data.forEach((value) => {
-            if (value.id === id)
+            if (value.id === rId)
                 this.data.splice(this.data.indexOf(value), 1);
         });
     }
-    changeElementById(id, change, newString) {
+    changeElementById(rId, change, newString) {
         change = change.toLowerCase();
         this.data.forEach((value) => {
-            if (value.id === id) {
+            if (value.id === rId) {
                 if (change === "bio")
                     value.bio = newString;
                 else if (change === "name")
@@ -42,30 +42,30 @@ class Person {
             }
         });
     }
-    getBioByIdF(id) {
+    getBioByIdF(rId) {
         var _a;
-        return (_a = this.data.find((value) => value.id === id)) === null || _a === void 0 ? void 0 : _a.bio;
+        return (_a = this.data.find((value) => value.id === rId)) === null || _a === void 0 ? void 0 : _a.bio;
     }
-    getNameByIdF(id) {
+    getNameByIdF(rId) {
         var _a;
-        return (_a = this.data.find((value) => value.id === id)) === null || _a === void 0 ? void 0 : _a.name;
+        return (_a = this.data.find((value) => value.id === rId)) === null || _a === void 0 ? void 0 : _a.name;
     }
-    deleteElementByIdF(id) {
-        return this.data.filter((value) => value.id !== id);
+    deleteElementByIdF(rId) {
+        return this.data.filter((value) => value.id !== rId);
     }
-    changeNameByIdF(id, newString) {
-        return this.data.map((value) => { if (value.id === id)
+    changeNameByIdF(rId, newString) {
+        return this.data.map((value) => { if (value.id === rId)
             value.name = newString; });
     }
-    changeBioByIdF(id, newString) {
-        this.data.map((value) => { if (value.id === id)
+    changeBioByIdF(rId, newString) {
+        this.data.map((value) => { if (value.id === rId)
             value.bio = newString; });
     }
-    changeElementByIdF(id, change, newString) {
+    changeElementByIdF(rId, change, newString) {
         if (change.toLowerCase() === "bio")
-            return this.changeBioByIdF(id, newString);
+            return this.changeBioByIdF(rId, newString);
         else if (change.toLowerCase() === "name")
-            return this.changeNameByIdF(id, newString);
+            return this.changeNameByIdF(rId, newString);
     }
 }
 const lista = [
