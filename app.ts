@@ -51,11 +51,11 @@ class Person{
     }
 
     public getBioByIdF(Id: number): string{
-        return this.data.find((value) => value.id !== Id)?.bio as string;
+        return this.data.find((value) => value.id === Id)?.bio as string;
     }
 
     public getNameByIdF(Id: number): string{
-        return this.data.find((value) => value.id !== Id)?.name as string;
+        return this.data.find((value) => value.id === Id)?.name as string;
     }
 
     public deleteElementByIdF(Id:number): Info[]{
@@ -87,7 +87,8 @@ const lista: Info[]  = [
 let p1 = new Person(lista);
 
 
-//Exemplos Imperativos
+//Exemplos Imperativos 
+/*
 
 console.log(p1.getBioById(1));
 console.log(p1.data[0]);
@@ -118,8 +119,10 @@ console.log(p1.data[0]);
 p1.changeElementByIdF(2,"BIO","O melhor padeiro da zona sul do rio");
 console.log(p1.data[0]);
 
-console.log(p1.deleteElementByIdF(2));
+console.log(p1.deleteElementByIdF(2));*/
 
 
 
 
+console.log(p1.getBioByIdF(0));
+console.log(p1.data[0]);
