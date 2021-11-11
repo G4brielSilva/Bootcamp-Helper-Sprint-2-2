@@ -88,7 +88,6 @@ let p1 = new Person(lista);
 
 
 //Exemplos Imperativos 
-/*
 
 console.log(p1.getBioById(1));
 console.log(p1.data[0]);
@@ -107,7 +106,7 @@ console.log(p1.data[0]);
 
 //Exemplos Funcionais
 
-console.log(p1.getBioByIdF(0));
+console.log(p1.getBioByIdF(1));
 console.log(p1.data[0]);
 
 console.log(p1.getNameByIdF(1));
@@ -119,10 +118,4 @@ console.log(p1.data[0]);
 p1.changeElementByIdF(2,"BIO","O melhor padeiro da zona sul do rio");
 console.log(p1.data[0]);
 
-console.log(p1.deleteElementByIdF(2));*/
-
-
-
-
-console.log(p1.getBioByIdF(0));
-console.log(p1.data[0]);
+console.log(p1.deleteElementByIdF(2));
