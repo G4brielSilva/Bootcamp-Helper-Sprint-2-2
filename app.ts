@@ -15,34 +15,34 @@ type Info = {
 class Person{
     public data: Info[];
 
-    constructor(List: Info[]){
-        this.data=List;
+    constructor(list: Info[]){
+        this.data=list;
     }
 
-    public getBioById(Id: number): any{
+    public getBioById(id: number): string{
         for(const value of this.data){
-            if(value.id === Id) return value.bio;
+            if(value.id === id) return value.bio;
         }
         return "Id Inválido";
     }
 
-    public getNameById(Id: number): string{
+    public getNameById(id: number): string{
         for(const value of this.data){
-            if(value.id === Id) return value.name;
+            if(value.id === id) return value.name;
         }
         return "Id Inválido";
     }
 
-    public deleteElementById(Id: number): void{
+    public deleteElementById(id: number): void{
         this.data.forEach((value: Info) => {
-            if(value.id === Id) this.data.splice(this.data.indexOf(value),1);
+            if(value.id === id) this.data.splice(this.data.indexOf(value),1);
         });
     }
 
-    public changeElementById(Id: number, change: string, newString: string): void{
+    public changeElementById(id: number, change: string, newString: string): void{
         change=change.toLowerCase();
         this.data.forEach((value: Info) => {
-            if(value.id === Id){
+            if(value.id === id){
                 if(change==="bio") value.bio = newString;
                 else if(change==="name") value.name =newString;
                 else console.log(`Opção de mudança ${change} inválida` );
@@ -50,30 +50,30 @@ class Person{
         });
     }
 
-    public getBioByIdF(Id: number): string{
-        return this.data.find((value) => value.id === Id)?.bio as string;
+    public getBioByIdF(id: number): string{
+        return this.data.find((value) => value.id === id)?.bio as string;
     }
 
-    public getNameByIdF(Id: number): string{
-        return this.data.find((value) => value.id === Id)?.name as string;
+    public getNameByIdF(id: number): string{
+        return this.data.find((value) => value.id === id)?.name as string;
     }
 
-    public deleteElementByIdF(Id:number): Info[]{
-        return this.data.filter((value: Info) => value.id !== Id);
+    public deleteElementByIdF(id:number): Info[]{
+        return this.data.filter((value: Info) => value.id !== id);
     }
 
-    private changeNameByIdF(Id: number, newString: string): any{
-        return this.data.map((value: Info) => {if(value.id === Id)value.name = newString;});
+    private changeNameByIdF(id: number, newString: string): any{
+        return this.data.map((value: Info) => {if(value.id === id)value.name = newString;});
         
     }
 
-    private changeBioByIdF(Id: number, newString: string): any{
-        this.data.map((value: Info) => {if(value.id === Id)value.bio = newString;});
+    private changeBioByIdF(id: number, newString: string): any{
+        this.data.map((value: Info) => {if(value.id === id)value.bio = newString;});
         
     }
-    public changeElementByIdF(Id: number, change: string, newString: string): any{
-        if(change.toLowerCase()==="bio") return this.changeBioByIdF(Id, newString);
-        else if(change.toLowerCase() === "name") return this.changeNameByIdF(Id, newString);
+    public changeElementByIdF(id: number, change: string, newString: string): any{
+        if(change.toLowerCase()==="bio") return this.changeBioByIdF(id, newString);
+        else if(change.toLowerCase() === "name") return this.changeNameByIdF(id, newString);
     }
 }
 

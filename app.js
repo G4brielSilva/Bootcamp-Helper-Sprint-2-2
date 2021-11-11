@@ -6,33 +6,33 @@
  e) Demonstre todos os métodos com o paradigma funcional e com o imperativo
  Atenção: A escolha de fazer 1 classe ou N classes é de cada pessoa*/
 class Person {
-    constructor(List) {
-        this.data = List;
+    constructor(list) {
+        this.data = list;
     }
-    getBioById(Id) {
+    getBioById(id) {
         for (const value of this.data) {
-            if (value.id === Id)
+            if (value.id === id)
                 return value.bio;
         }
         return "Id Inválido";
     }
-    getNameById(Id) {
+    getNameById(id) {
         for (const value of this.data) {
-            if (value.id === Id)
+            if (value.id === id)
                 return value.name;
         }
         return "Id Inválido";
     }
-    deleteElementById(Id) {
+    deleteElementById(id) {
         this.data.forEach((value) => {
-            if (value.id === Id)
+            if (value.id === id)
                 this.data.splice(this.data.indexOf(value), 1);
         });
     }
-    changeElementById(Id, change, newString) {
+    changeElementById(id, change, newString) {
         change = change.toLowerCase();
         this.data.forEach((value) => {
-            if (value.id === Id) {
+            if (value.id === id) {
                 if (change === "bio")
                     value.bio = newString;
                 else if (change === "name")
@@ -42,30 +42,30 @@ class Person {
             }
         });
     }
-    getBioByIdF(Id) {
+    getBioByIdF(id) {
         var _a;
-        return (_a = this.data.find((value) => value.id === Id)) === null || _a === void 0 ? void 0 : _a.bio;
+        return (_a = this.data.find((value) => value.id === id)) === null || _a === void 0 ? void 0 : _a.bio;
     }
-    getNameByIdF(Id) {
+    getNameByIdF(id) {
         var _a;
-        return (_a = this.data.find((value) => value.id === Id)) === null || _a === void 0 ? void 0 : _a.name;
+        return (_a = this.data.find((value) => value.id === id)) === null || _a === void 0 ? void 0 : _a.name;
     }
-    deleteElementByIdF(Id) {
-        return this.data.filter((value) => value.id !== Id);
+    deleteElementByIdF(id) {
+        return this.data.filter((value) => value.id !== id);
     }
-    changeNameByIdF(Id, newString) {
-        return this.data.map((value) => { if (value.id === Id)
+    changeNameByIdF(id, newString) {
+        return this.data.map((value) => { if (value.id === id)
             value.name = newString; });
     }
-    changeBioByIdF(Id, newString) {
-        this.data.map((value) => { if (value.id === Id)
+    changeBioByIdF(id, newString) {
+        this.data.map((value) => { if (value.id === id)
             value.bio = newString; });
     }
-    changeElementByIdF(Id, change, newString) {
+    changeElementByIdF(id, change, newString) {
         if (change.toLowerCase() === "bio")
-            return this.changeBioByIdF(Id, newString);
+            return this.changeBioByIdF(id, newString);
         else if (change.toLowerCase() === "name")
-            return this.changeNameByIdF(Id, newString);
+            return this.changeNameByIdF(id, newString);
     }
 }
 const lista = [
